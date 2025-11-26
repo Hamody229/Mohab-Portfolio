@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohab Alaa — Hardware Designer</title>
+  <meta name="description" content="Portfolio of Mohab Alaa — Hardware Designer. Embedded systems, PCB design, prototyping." />
+  <style>
+    :root{
+      --red:#C8102E;
+      --black:#0B0B0B;
+      --white:#FFFFFF;
+      --muted:#f4f4f4;
+      --max-width:1100px;
+      --radius:16px;
+      --gap:20px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--white);color:var(--black);}
+
+    header{background:linear-gradient(180deg,var(--white) 0%, #fff 60%);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(0,0,0,0.06)}
+    .nav{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:var(--black);display:grid;place-items:center;color:var(--white);font-weight:700}
+    .brand h1{font-size:16px;margin:0}
+    nav ul{list-style:none;display:flex;gap:14px;margin:0;padding:0}
+    nav a{color:var(--black);text-decoration:none;padding:8px;border-radius:8px}
+    nav a.cta{background:var(--red);color:var(--white);padding:8px 12px}
+
+    .container{max-width:var(--max-width);margin:36px auto;padding:0 18px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}.hero-right{order:-1}}
+
+    .card{background:linear-gradient(180deg, #fff, var(--muted));border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+
+    .intro h2{margin:0 0 8px;font-size:28px}
+    .intro p{margin:0 0 16px;color:#333}
+    .btn-row{display:flex;gap:12px}
+    .btn{background:var(--black);color:var(--white);padding:10px 14px;border-radius:10px;text-decoration:none}
+    .btn.alt{background:transparent;border:1px solid var(--red);color:var(--red)}
+
+    .hero-right{display:grid;gap:16px}
+    .profile-photo{height:320px;border-radius:14px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),#8b0000);color:var(--white);font-weight:700}
+    .profile-photo h3{margin:0}
+
+    section{margin-top:var(--gap)}
+    h3.section-title{margin:0 0 14px;display:flex;align-items:center;gap:12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(1,1fr)}}
+
+    .skill{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fafafa);border:1px solid rgba(0,0,0,0.04)}
+    .skill h4{margin:0 0 8px}
+    .progress{height:8px;background:linear-gradient(90deg,#eee,#f7f7f7);border-radius:8px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:var(--red);width:60%}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media(max-width:900px){.projects{grid-template-columns:1fr}}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fafafa);border:1px solid rgba(0,0,0,0.04)}
+    .project .meta{font-size:13px;color:#666}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{padding:6px 8px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);font-size:12px}
+
+    .contact-row{display:flex;gap:20px}
+    @media(max-width:900px){.contact-row{flex-direction:column}}
+    .contact-card{flex:1}
+    .contact-form{flex:1}
+    label{display:block;margin:8px 0 6px;font-size:13px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{margin:36px 0 80px;text-align:center;color:#555}
+
+    /* small helpers */
+    .muted{color:#666;font-size:14px}
+    .row{display:flex;gap:12px;align-items:center}
+
+    /* simple animations */
+    .fade-up{transform:translateY(10px);opacity:0;transition:all .5s ease}
+    .fade-up.in{transform:none;opacity:1}
+
+    /* accessibility focus */
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(200,16,30,0.18)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">MA</div>
+        <div>
+          <h1 style="font-size:14px;margin:0">Mohab Alaa</h1>
+          <div class="muted" style="font-size:12px">Hardware Designer — Embedded & PCB</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a class="cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card intro fade-up" id="intro">
+        <h2>Hi — I'm <span style="color:var(--red)">Mohab Alaa</span></h2>
+        <p>I design reliable electronics: PCB layout, schematic capture, embedded firmware, and rapid hardware prototyping. I take ideas from whiteboard to working prototype.</p>
+        <div class="row btn-row">
+          <a class="btn" id="downloadResume">Download Resume</a>
+          <a class="btn alt" href="#projects">See Projects</a>
+        </div>
+
+        <div style="margin-top:18px">
+          <strong>Location:</strong> Alexandria, Egypt &nbsp; • &nbsp; <strong>Available for:</strong> Contract & Full-time
+        </div>
+
+        <div style="margin-top:14px" class="muted">Toolbox: Altium / KiCad / Eagle, STM32/AVR, FreeRTOS, LTspice, Oscilloscopes, 3D printing, fabrication</div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card profile-photo fade-up" style="padding:18px;text-align:center">
+          <div>
+            <h3>Hardware Designer</h3>
+            <p class="muted">Embedded systems & PCB design</p>
+          </div>
+        </div>
+
+        <div class="card fade-up">
+          <h4 style="margin:0 0 8px">Contact</h4>
+          <div class="muted">Email: <a target="_blank" href="mail:mohabalaa2012@gmail.com">mohabalaa2012@gmail.com</a></div>
+          <div style="margin-top:8px" class="muted" >LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/mohab-alaa-02a5462b6/">https://www.linkedin.com/in/mohab-alaa-02a5462b6/</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <h3 class="section-title">About</h3>
+      <div class="card fade-up">
+        <p>I'm a hardware designer with experience in consumer and industrial electronics. I specialize in low-noise analog front-ends, power management, multi-layer PCB layout, and embedded firmware. I focus on manufacturability and testability: DFM/DFT practices, clear schematics, and solid BOM management.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h3 class="section-title">Skills</h3>
+      <div class="grid">
+        <div class="skill fade-up">
+          <h4>PCB Design</h4>
+          <div class="muted">Multilayer layout, impedance control, design rules</div>
+          <div style="margin-top:10px" class="progress"><i style="width:88%"></i></div>
+        </div>
+        <div class="skill fade-up">
+          <h4>Embedded Firmware</h4>
+          <div class="muted">C/C++, RTOS, bootloaders, drivers</div>
+          <div style="margin-top:10px" class="progress"><i style="width:86%"></i></div>
+        </div>
+        <div class="skill fade-up">
+          <h4>Prototyping & Test</h4>
+          <div class="muted">Oscilloscope, logic analyzer, fixture design</div>
+          <div style="margin-top:10px" class="progress"><i style="width:84%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3 class="section-title">Selected Projects</h3>
+      <div class="projects">
+        <article class="project fade-up">
+          <h4>1. Low-Noise Sensor Interface</h4>
+          <div class="meta">Custom analog front-end for precision sensors • 2-layer PCB • 3 prototypes</div>
+          <p class="muted">Designed amplifier chain, filtering, and layout to minimize coupling. Implemented temperature compensation in firmware.</p>
+          <div class="chips"><span class="chip">Altium</span><span class="chip">Analog</span><span class="chip">Schematic</span></div>
+        </article>
+
+        <article class="project fade-up">
+          <h4>2. IoT Energy Monitor</h4>
+          <div class="meta">STM32-based energy monitoring device • Wi-Fi • Power measurements</div>
+          <p class="muted">Handled ADC calibration, current-sense PCB design, and secure OTA firmware updates.</p>
+          <div class="chips"><span class="chip">STM32</span><span class="chip">Power</span><span class="chip">Manufacturing</span></div>
+        </article>
+
+        <article class="project fade-up">
+          <h4>3. Motor Control Driver</h4>
+          <div class="meta">Gate-driver, protection, and firmware for BLDC motors</div>
+          <p class="muted">Designed robust protection circuits and tuned control loops in firmware.</p>
+          <div class="chips"><span class="chip">Motor Control</span><span class="chip">PCB</span><span class="chip">Firmware</span></div>
+        </article>
+
+        <article class="project fade-up">
+          <h4>4. Quick Turn Dev-Kit</h4>
+          <div class="meta">A compact dev-board for rapid prototyping with headers and test points</div>
+          <p class="muted">Focused on accessibility for firmware engineers and clear breakout documentation.</p>
+          <div class="chips"><span class="chip">KiCad</span><span class="chip">Prototyping</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3 class="section-title">Get in touch</h3>
+      <div class="card contact-row">
+        <div class="contact-card">
+          <h4>Contact Info</h4>
+          <p class="muted">I'm open to contract and full-time roles. I respond usually within 48 hours.</p>
+          <div style="margin-top:12px"><strong>Email</strong><div class="muted">mohabalaa2012@gmail.com</div></div>
+          <div style="margin-top:8px"><strong>Phone</strong><div class="muted">+20 12 203 21130</div></div>
+        </div>
+
+        <form class="contact-form" id="contactForm" onsubmit="return false;">
+          <label for="name">Name</label>
+          <input id="name" placeholder="Your name" required />
+          <label for="email">Email</label>
+          <input id="email" placeholder="you@example.com" required />
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Brief message..." required></textarea>
+          <div style="margin-top:10px;display:flex;gap:10px">
+            <button class="btn" onclick="submitForm()">Send</button>
+            <button class="btn alt" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <strong>Mohab Alaa</strong> — Hardware Designer</div>
+    </footer>
+  </main>
+
+  <script>
+    // small UX & interactions
+    document.addEventListener('DOMContentLoaded',()=>{
+      // fade-up elements
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{
+        setTimeout(()=>el.classList.add('in'), 120 + i*80);
+      });
+
+      // resume download
+      document.getElementById('downloadResume').addEventListener('click',()=>{
+        downloadResume();
+      });
+    });
+
+    function submitForm(){
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      if(!name||!email||!message){alert('Please complete the form.');return}
+      alert('Thanks '+name+' — message ready to send. Replace alert with real form endpoint.');
+      document.getElementById('contactForm').reset();
+    }
+
+    function downloadResume(){
+      const txt = `Mohab Alaa\nHardware Designer\n\nSummary:\n- Hardware designer experienced in PCB layout, embedded firmware, analog and power design.\n\nSkills:\n- PCB: Altium, KiCad\n- Microcontrollers: STM32, AVR\n- Tools: Oscilloscope, Logic Analyzer\n\nExperience:\n- Project work: Low-noise sensor front-ends, IoT devices, motor drivers\n\nContact:\nEmail: mohab.alaa@example.com\n`;
+      const blob = new Blob([txt],{type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href=url; a.download='Mohab-Alaa-Resume.txt';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
